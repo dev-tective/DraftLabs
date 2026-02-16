@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00f2ff;
+  --color-accent: #ff00ff;
+  --color-background-light: #f1f5f9;
+  --color-background-dark: #020817;
+  --color-card-dark: #0a1224;
+  --color-border-cyan: rgba(0, 242, 255, 0.3);
+
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Rajdhani", sans-serif;
+
+  --radius: 4px;
+}
+
+@layer components {
+  .btn-primary {
+    corner-bottom-left-shape: bevel;
+    corner-top-right-shape: bevel;
+    @apply rounded-tr-2xl rounded-bl-2xl cursor-pointer py-6 flex-1 border border-slate-700 space-y-3 transition-all;
+  }
+
+  .btn-primary:hover {
+    @apply bg-cyan-950/70 border-cyan-400;
+  }
+
+  /* Firefox scrollbar */
+
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-cyan-950;
+  border-radius: 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-cyan-600;
+  border-radius: 0;
+  border: 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-cyan-400;
+}
+
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* .custom-scrollbar {
+  scrollbar-color: oklch(52% 0.105 223.128) rgb(15 23 42 / 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  border-radius: 0;
+}
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none;
+} */
+
+/* .custom-scrollbar:hover {
+  scrollbar-color: oklch(78.9% 0.154 211.53) rgb(15 23 42 / 0.5);
+} */
+
+/* :root {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--color-background-dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+} */
+
+body {
+  @apply bg-slate-950 text-slate-200;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.beveled {
+  corner-shape: bevel;
+}
+
+.beveled-tr {
+  corner-top-right-shape: bevel;
+}
+
+.beveled-tl {
+  corner-top-left-shape: bevel;
+}
+
+.beveled-bl {
+  corner-bottom-left-shape: bevel;
+}
+
+.beveled-bl-tr {
+  corner-bottom-left-shape: bevel;
+  corner-top-right-shape: bevel;
+}
+
+.beveled-br-tl {
+  corner-bottom-right-shape: bevel;
+  corner-top-left-shape: bevel;
+}
+
+.scanline {
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.035) 0%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.035) 100%);
+  background-size: 100% 4px;
+}
+
+.sidebar-active {
+  @apply text-cyan-400 bg-linear-to-t from-transparent to-cyan-400/10 md:bg-linear-to-r;
+}
+
+.sidebar-active::after {
+  content: "";
+  @apply absolute top-0 right-0 w-full md:w-1 h-1 md:h-full bg-cyan-400;
+}
+
+@keyframes slideOpen {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideClose {
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+    display: none;
+  }
+}
+
+.slide-open {
+  animation: slideOpen 0.3s ease-out forwards;
+}
+
+.slide-close {
+  animation: slideClose 0.3s ease-in forwards;
+}
+
+@keyframes countdown {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
+}

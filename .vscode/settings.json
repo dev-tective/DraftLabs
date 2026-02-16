@@ -1,0 +1,10 @@
+{
+    "css.lint.unknownAtRules": "ignore",
+    "css.lint.validProperties": [
+        "corner-top-left-shape",
+        "corner-bottom-right-shape",
+        "corner-top-right-shape",
+        "corner-bottom-left-shape",
+        "corner-shape"
+    ]
+}
